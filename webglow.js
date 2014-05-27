@@ -42,9 +42,12 @@ setInterval(function(){
 }, 3000);
 
 stage.on('click', function(){
-	console.log('You clicked me!');
 	var mousePos = stage.getMousePosition();
     addCircle(layer, mousePos.x, mousePos.y);
+});
+
+stage.on('touchstart', function(e){
+    addCircle(layer, e.pageX, e.pageY);
 });
 
 //*---------------ANIMATION FUNCTIONS-----------------*//
